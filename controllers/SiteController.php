@@ -2,13 +2,13 @@
 
 namespace app\controllers;
 
-use yii;
-use yii\filters\AccessControl;
-use yii\web\Controller;
-use yii\filters\VerbFilter;
-use app\models\LoginForm;
 use app\models\ContactForm;
 use app\models\EntryForm;
+use app\models\LoginForm;
+use yii;
+use yii\filters\AccessControl;
+use yii\filters\VerbFilter;
+use yii\web\Controller;
 
 class SiteController extends Controller
 {
@@ -127,12 +127,24 @@ class SiteController extends Controller
     /**
      * Hello page.
      *
+     * @param string $message
      * @return string
      */
     public function actionSay($message = 'Hello Shailesh')
     {
         return $this->render('say', ['message' => $message]);
     }
+
+    /**
+     * Hello page.
+     *
+     * @return string
+     */
+    public function actionArrayhelper()
+    {
+        return $this->render('arrayhelper', ['message' => "Shailesh Rudra"]);
+    }
+
 
     /**
      * Entry form for User.
