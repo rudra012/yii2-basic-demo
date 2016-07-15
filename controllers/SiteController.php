@@ -2,7 +2,7 @@
 
 namespace app\controllers;
 
-use Yii;
+use yii;
 use yii\filters\AccessControl;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
@@ -121,5 +121,10 @@ class SiteController extends Controller
     public function actionAbout()
     {
         return $this->render('about');
+    }
+
+    public function actionSay($message = 'Hello Shailesh')
+    {
+        return $this->render('say', ['message' => $message]);
     }
 }
