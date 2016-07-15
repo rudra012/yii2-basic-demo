@@ -18,6 +18,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <p>
         <?= Html::a('Create Country', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
+
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
@@ -30,5 +31,11 @@ $this->params['breadcrumbs'][] = $this->title;
 
             ['class' => 'yii\grid\ActionColumn'],
         ],
+    ]); ?>
+
+    <?= \yii\widgets\ListView::widget([
+        'dataProvider' => $dataProvider,
+        'itemView' => 'name',
+
     ]); ?>
 </div>
